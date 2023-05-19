@@ -23,9 +23,11 @@ body {
 @font-face {
   font-family: "Abnes";
   src: url(./fonts/abnes/abnes.ttf) format("truetype");
+  font-display: block;
 }
 
 @font-face {
   font-family: "Montserrat";
   src: url(./fonts/montserrat/Montserrat-Regular.ttf) format("truetype");
+  font-display: block;
 }

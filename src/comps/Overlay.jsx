@@ -1,6 +1,13 @@
 import { Scroll, useScroll } from "@react-three/drei"
 import { useFrame } from "@react-three/fiber";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import {Swiper, SwiperSlide} from "swiper/react";
+import "swiper/css/bundle";
+import "swiper/css/pagination";
+import "swiper/css/grid";
+import "swiper/css/autoplay";
+
+import { Pagination, Grid, Autoplay } from "swiper";
 
 export default function Overlay(){
 
@@ -12,16 +19,41 @@ export default function Overlay(){
     const[opacityFourthSection, setOpacityFourthSection] = useState(1);
     const[opacityFifthSection, setOpacityFifthSection] = useState(1);
     
+    const [screenSize, setScreenSize] = useState(getCurrentDimension());
+
+  	function getCurrentDimension(){
+    	return {
+      		width: window.innerWidth,
+      		height: window.innerHeight
+    	}
+  	}
+  
+    useEffect(() => {
+        const updateDimension = () => {
+              setScreenSize(getCurrentDimension())
+        }
+        window.addEventListener('resize', updateDimension);
+
+    
+        return(() => {
+            window.removeEventListener('resize', updateDimension);
+        })
+    }, [screenSize])
 
 
-
+/*
     useFrame(() => {
         setOpacityFirstSection(1 - scroll.range(0, 0.25/5));
         setOpacitySecondSection(scroll.curve(0.75/5, 1/5));
         setOpacityThirdSection(scroll.curve(2/5, 0.75/5));
-        setOpacityFourthSection(scroll.curve((3.2)/5, 1/5));
+        setOpacityFourthSection(scroll.curve((3)/5, 1/5));
         setOpacityFifthSection(scroll.range(4.5/5, 0.5/5));
+        console.log(screenSize.width)
     })
+*/
+    function getRows(){
+        return screenSize.width > 640 ? 3 : 1;
+    }
 
 
     return(
@@ -53,23 +85,7 @@ export default function Overlay(){
         
         <InterestPage opacity={opacityThirdSection} />
 
-         <section className="h-screen justify-center items-end flex flex-col w-screen pr-10 snap-y snap-mandatory" style={{opacity: opacityFourthSection}}>
-            <div className="w-1/2 flex items-center justify-center bg-gradient-to-t from-[#000000]/5 to-[#000000]/5 via-[#000000]/60 h-screen">
-                <div className="w-full">
-                    <div className="text-white">
-
-                        <h1 className="text-6xl font-abnes">Pro<span className="text-orange-700">jec</span>ts</h1>
-
-                        <ul>
-                            <li><Proj title ="HashMark 1.0" description="HashMark 1.0 is a propietary server side-software which automates the bidding of hashpower in the Nicehash Hashpower Marketplace ecosystem." img="./svg/hashmark.svg"/></li>
-                            <li><Proj title="Orbital, Tiktok" description="Currently working on developing high speed, efficient API severs under mentorship from Tiktok." img="./photos/tiktok.png"/></li>
-                            <li><Proj title="A-Levels Science MCQ" img="./photos/mcq.png" description="A mobile MCQ app for A-Levels students to practice for their exams."/></li>  
-                        </ul>
-
-                    </div>
-                </div>
-            </div>
-         </section>
+        <ProjectPage opacity={opacityFourthSection}/>
 
 
 
@@ -113,15 +129,60 @@ const Tech = (props) => {
 }
 
 
+function ProjectPage(props){
+    return(<>
+            <section className=" h-screen justify-center items-end flex flex-col w-screen snap-y snap-mandatory" style={{opacity: props.opacity}}>
+            
+            {/* Regular devices */}
+            
+            <div className=" w-1/2 md:flex hidden items-center justify-center h-screen bg-gradient-to-r from-black/10 to-black">
+                <div className="w-full">
+                    <div className="text-white">
+
+                        <h1 className="text-6xl font-abnes">Pro<span className="text-orange-700">jec</span>ts</h1>
+
+                        <ul>
+                            <li><Proj title ="HashMark 1.0" description="HashMark 1.0 is a propietary server side-software which automates the bidding of hashpower in the Nicehash Hashpower Marketplace ecosystem." img="./svg/hashmark.svg"/></li>
+                            <li><Proj title="Orbital, Tiktok" description="Currently working on developing high speed, efficient API severs under mentorship from Tiktok." img="./photos/tiktok.png"/></li>
+                            <li><Proj title="A-Levels Science MCQ" img="./photos/mcq.png" description="A mobile MCQ app for A-Levels students to practice for their exams."/></li>  
+                        </ul>
+
+
+                    </div>
+                </div>
+            </div>
+
+            {/* Small Devices */}
+            <div className="mb-8 md:hidden flex flex-col justify-end h-screen w-screen">
+
+                <h1 className="flex relative justify-center bottom-10 text-3xl font-abnes">Pro<span className="text-orange-700">jec</span>ts</h1>
+
+                <div className="mx-1 bg-gradient-to-r from-black/10 to-black/10 via-black rounded-none">
+                    <Swiper  loop={true} autoplay={{delay: 2000}} updateOnWindowResize={true} slidesPerView={1} modules={[Pagination, Autoplay]} className=" ">
+                                
+                        <SwiperSlide><Proj title ="HashMark 1.0" description="HashMark 1.0 is a propietary server side-software which automates the bidding of hashpower in the Nicehash Hashpower Marketplace ecosystem." img="./svg/hashmark.svg"/></SwiperSlide>
+                        <SwiperSlide><Proj title="Orbital, Tiktok" description="Currently working on developing high speed, efficient API severs under mentorship from Tiktok." img="./photos/tiktok.png"/></SwiperSlide>
+                        <SwiperSlide><Proj title="A-Levels Science MCQ" img="./photos/mcq.png" description="A mobile MCQ app for A-Levels students to practice for their exams."/></SwiperSlide>
+                                
+                    </Swiper>
+                </div>
+                
+            </div>
+         </section>
+
+    
+    </>)
+}
+
 function Proj(props){
     return(
-    <div className="flex flex-row my-8 p-2 ml-2 hover:text-orange-600 bg-gradient-to-r from-black to-[#ffffff]/0">
-        <img className="w-32" src={props.img}/>
-        <div className="flex flex-col px-3">
-            <h2 className="text-xl h-1/3 font-abnes">{props.title}</h2>
-            <p className="text-base h-2/3 font-montserrat text-white">{props.description}</p>
+        <div className="flex w-full flex-row align-middle md:my-8 p-2 md:ml-2 hover:text-orange-600  h-1/3">
+            <img className="md:w-32 w-20 h-auto flex" src={props.img}/>
+            <div className="flex flex-col px-3">
+                <h2 className="md:text-xl text-base mb-1 h-1/3 font-abnes">{props.title}</h2>
+                <p className="md:text-base text-xs h-2/3 font-montserrat text-white">{props.description}</p>
+            </div>
         </div>
-    </div>
     ) 
 }
 
@@ -141,7 +202,7 @@ function InterestPage(props){
             <div className="text-white w-screen items-center">
                 <h1 className="md:text-7xl text-3xl font-abnes flex justify-center">Inter<span className="text-orange-700">es</span>ts</h1>
                 <div>
-                    <ul className=" columns-5 mx-3 md:mt-8 mt-3 md:mb-6 md-3 opacity-95">
+                    <ul className=" columns-5 mx-3 md:mt-8 mt-3 md:mb-6 md-4 opacity-95">
                         <li><Interest title="Machine Learning" img="./svg/machinelearning.svg"/></li>
                         <li><Interest title="Particle Physics"  img="./svg/particle.svg"/></li>
                         <li><Interest title="Quantitative Finance" img="./svg/quant.svg"/></li>

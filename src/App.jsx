@@ -12,7 +12,7 @@ function App() {
   return (
     <Canvas id="sphere-canvas-container" shadows className="snap-container">
       <Suspense fallback={<Loading/>}>
-      <ScrollControls pages={5} damping={0.4} enabled={true}>
+      <ScrollControls pages={5} damping={0.6} enabled={true}>
         <Scene />
         <Overlay/>
       </ScrollControls>

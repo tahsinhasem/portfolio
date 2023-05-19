@@ -135,7 +135,7 @@ function ProjectPage(props){
             </div>
 
             {/* Medium Devices */}
-            <div className="mb-8 md:hidden flex flex-col justify-end h-screen w-screen">
+            <div className="mb-8 md:hidden flex flex-col justify-end h-screen w-screen text-white">
                 <h1 className="flex relative justify-center bottom-10 text-3xl font-abnes">Pro<span className="text-orange-700">jec</span>ts</h1>
 
                 <div className="mx-1 bg-gradient-to-r from-black/10 to-black/10 via-black rounded-none">
@@ -157,7 +157,7 @@ function Proj(props){
         <div className="flex w-full flex-row align-middle md:my-8 p-2 md:ml-2 hover:text-orange-600  h-1/3">
             <img className="md:w-32 w-20 h-auto flex" src={props.img}/>
             <div className="flex flex-col px-3">
-                <h2 className="md:text-xl text-base mb-1 h-1/3 font-abnes">{props.title}</h2>
+                <h2 className="md:text-xl text-sm mb-1 h-1/3 font-abnes">{props.title}</h2>
                 <p className="md:text-base text-xs h-2/3 font-montserrat text-white">{props.description}</p>
             </div>
         </div>

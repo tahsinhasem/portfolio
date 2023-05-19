@@ -1,0 +1,11 @@
+Model Information:
+* title:	Harvard-Yenching Institute statue
+* source:	https://sketchfab.com/3d-models/harvard-yenching-institute-statue-fc245710c4d64d0886a7f37dc522ff87
+* author:	Alexandre Tokovinine (https://sketchfab.com/tokovinin3d)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Harvard-Yenching Institute statue" (https://sketchfab.com/3d-models/harvard-yenching-institute-statue-fc245710c4d64d0886a7f37dc522ff87) by Alexandre Tokovinine (https://sketchfab.com/tokovinin3d) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

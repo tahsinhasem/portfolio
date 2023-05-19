@@ -1,0 +1,31 @@
+body {
+  background-color: rgb(0, 0, 0);
+  scroll-snap-type: y mandatory;
+  padding: 0;
+}
+
+
+#sphere-canvas-container{
+  height: 100vh !important;
+  width: 50vw;
+}
+
+.snap-container{
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.snap-container section{
+  scroll-snap-align: center;
+  display: flex;
+}
+
+@font-face {
+  font-family: "Abnes";
+  src: url(./fonts/abnes/abnes.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(./fonts/montserrat/Montserrat-Regular.ttf) format("truetype");
+}

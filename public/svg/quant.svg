@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 240 240" style="enable-background:new 0 0 240 240;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;}
+	.st1{fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#FFFFFF;stroke-width:5;}
+	.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+</style>
+<title>trade</title>
+<desc>Created with Sketch.</desc>
+<g>
+	<g id="bounding-box">
+		<polygon id="shape" class="st0" points="0,-8 240,-8 240,232 0,232 		"/>
+	</g>
+	<path id="Rectangle" class="st1" d="M183,62h4c4.4,0,8,3.6,8,8v19c0,4.4-3.6,8-8,8h-4c-4.4,0-8-3.6-8-8V70
+		C175,65.6,178.6,62,183,62z"/>
+	<rect id="line" x="62.5" y="142" class="st2" width="5" height="20"/>
+	<rect id="line-copy" x="102.5" y="32" class="st2" width="5" height="20"/>
+	<rect id="line-copy-2" x="102.5" y="172" class="st2" width="5" height="20"/>
+	<rect id="line-copy-3" x="142.5" y="52" class="st2" width="5" height="20"/>
+	<rect id="line-copy-4" x="142.5" y="147" class="st2" width="5" height="20"/>
+	<rect id="line-copy-5" x="182.5" y="37" class="st2" width="5" height="20"/>
+	<rect id="line-copy-6" x="182.5" y="102" class="st2" width="5" height="20"/>
+	<rect x="62.5" y="202" class="st2" width="5" height="20"/>
+	<path id="Rectangle-Copy" class="st1" d="M143,77h4c4.4,0,8,3.6,8,8v49c0,4.4-3.6,8-8,8h-4c-4.4,0-8-3.6-8-8V85
+		C135,80.6,138.6,77,143,77z"/>
+	<path id="Rectangle-Copy-2" class="st1" d="M103,57h4c4.4,0,8,3.6,8,8v94c0,4.4-3.6,8-8,8h-4c-4.4,0-8-3.6-8-8V65
+		C95,60.6,98.6,57,103,57z"/>
+	<path id="Rectangle-Copy-3" class="st1" d="M63,165h4c4.4,0,8,3.6,8,8v16c0,4.4-3.6,8-8,8h-4c-4.4,0-8-3.6-8-8v-16
+		C55,168.6,58.6,165,63,165z"/>
+</g>
+</svg>
